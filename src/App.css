@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.column1{
+  background-color: greenyellow;
+}
+
+.column2{
+  background-color: lavender;
+  padding: 3%;
+}
+
+.column2 .row1{
+  background-color: yellow;
+  padding: 5%;
+}
+
+.column2 .row2{
+  background-color: aqua;
+  padding: 5%;
+}
+
+.column2 .row3{
+  background-color: rosybrown;
+  padding: 5%;
+}
