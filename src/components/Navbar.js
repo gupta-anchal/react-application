@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Navbar(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode ==='light' ? 'light' : 'dark'} bg-${props.mode}`}>
     <div className="container-fluid">
       <a className="navbar-brand" href="/">{props.title}</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,15 @@ export default function Navbar(props) {
             <a className="nav-link" href="/">{props.aboutText}</a>
           </li>
         </ul>
+        <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+        <div className="darkmode-group">
+          <button type="button" className="btn btn-light btn-circle" style={{display: props.mode === 'light' ? 'none':'inline', color: 'black'}} onClick={props.toggleMode}>White</button>
+          <button type="button" className="btn btn-danger btn-circle" onClick={props.toggleRedMode}>Red</button>
+          <button type="button" className="btn btn-primary   btn-circle" onClick={props.toggleBlueMode}>Blue</button>
+          <button type="button" className="btn btn-success btn-circle" onClick={props.toggleGreenMode}>Green</button>
+        </div>
+          {/* <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/> */}
+        </div>
       </div>
     </div>
     </nav>
